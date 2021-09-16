@@ -1,5 +1,5 @@
-@Library('SharedLibSTF_Jenkins') _
-welcomeJob "lambdatest"
+/@Library('SharedLibSTF_Jenkins') _
+//welcomeJob "lambdatest"
 
 node {
   
