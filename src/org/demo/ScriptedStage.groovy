@@ -6,8 +6,8 @@ class ScriptedStage {
     }
     
     void scmCheckout() {
-        script.stage(name) {
-            script.echo "Triggering ${name} stage..."
+        script.stage("SCM Checkout") {
+            script.echo "Triggering SCM Checkout stage..."
             script.bat "scm checkout"
         }
     }
