@@ -2,8 +2,9 @@ class ScriptedStage {
     private final Script script
     private final Object scm
     
-    ScriptedStage(Script script) {
+    ScriptedStage(Script script, Object scm) {
         this.script = script
+        this.scm = scm
     }
     
     // You can pass as many parameters as needed
