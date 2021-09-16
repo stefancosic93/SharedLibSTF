@@ -1,17 +1,9 @@
-//@Library('SharedLibSTF_Jenkins') _
-//welcomeJob "lambdatest"
+
 @Library('SharedLibSTF_Jenkins')
-import org.demo.Utilities
+import org.demo.buildUtils
 
 def utils = new Utilities(env, steps)
 node {
-  utils.mvn 'clean package'
+  utils.fun1
 }
 
-node {
-  
-  stage("MVN Check") {
-    bat "mvn -v"
-  }
-  
-}
