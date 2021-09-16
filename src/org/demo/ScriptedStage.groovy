@@ -1,10 +1,14 @@
 class ScriptedStage {
     private final Script script
     private final hudson.plugins.git.GitSCM scm
+    def env
+    def steps
     
-    ScriptedStage(Script script, hudson.plugins.git.GitSCM scm) {
+    ScriptedStage(Script script, hudson.plugins.git.GitSCM scm, env, steps) {
         this.script = script
         this.scm = scm
+        this.env = env
+        this.steps = steps
     }
     
     // You can pass as many parameters as needed
