@@ -1,7 +1,4 @@
-node {
-  stage('SCM Checkout') {
-    //git 'https://github.com/stefancosic93/SharedLibSTF'
-    checkout scm
-  }
+@Library('SharedLibSTF_Jenkins') _
+welcomeJob ‘lambdatest’
 
-}
+
