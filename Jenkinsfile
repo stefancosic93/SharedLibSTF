@@ -1,9 +1,12 @@
 //@Library('SharedLibSTF_Jenkins') _
 //welcomeJob "lambdatest"
+@Library('SharedLibSTF_Jenkins')
+import org.foo.Utilities
 
-def myUtils = new org.demo.buildUtils()
-myUtils.checkOutFrom(repo)
-
+def utils = new Utilities(env, steps)
+node {
+  utils.mvn 'clean package'
+}
 
 node {
   
