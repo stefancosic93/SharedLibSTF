@@ -19,7 +19,7 @@ class ScriptedStage {
            // script.sh "echo 'Execute your desired bash command here'"
             script.bat "mvn -v"
             if (param1) {
-                script.sh "echo 'Executing conditional command, because param1 == true'"
+                script.bat "echo 'Executing conditional command, because param1 == true'"
             }
         }
     }
