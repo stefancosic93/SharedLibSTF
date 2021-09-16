@@ -5,21 +5,31 @@ class ScriptedStage {
         this.script = script
     }
     
-    void scmCheckout() {
-
-    }
-
     // You can pass as many parameters as needed
     void execute(String name) {
+        script.echo "Triggering ${name} stage..."
         if (name == "Checkout SCM") {
-                script.stage("Checkout SCM") {
-                    script.echo "Triggering Checkout SCM stage..."
+                script.stage(name) {
                     script.bat "checkout scm"
+            }
+        }
+        if (name == "Tests") {
+                script.stage(name) {
+                    script.bat "mvn test"
+            }
+        }
+        if (name == "Sonar") {
+                script.stage(name) {
+                    script.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
+            }
+        }
+        if (name == "Artifactory") {
+                script.stage(name) {
+                    script.bat "echo implement artifactory"
             }
         }
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-           // script.sh "echo 'Execute your desired bash command here'"
             script.bat "mvn -v"
         }
     }
