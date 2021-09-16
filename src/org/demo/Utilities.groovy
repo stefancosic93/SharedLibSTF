@@ -12,7 +12,7 @@ class Utilities implements Serializable {
   }
   
   def fun1() {
-    echo 'Fun1 invoked from shared lib'
+    println('Fun1 invoked from shared lib')
   }
   
   def fun2(number) {
