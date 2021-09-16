@@ -28,9 +28,11 @@ class ScriptedStage {
                 script.bat "echo implement artifactory"
             }
         }
-        script.stage(name) { //Foo, delete later
-            script.echo "Triggering ${name} stage..."
-            script.bat "mvn -v"
+        if (name == "Foo") {
+            script.stage(name) {
+                script.echo "Triggering ${name} stage..."
+                script.bat "mvn -v"
+            }
         }
     }
     
