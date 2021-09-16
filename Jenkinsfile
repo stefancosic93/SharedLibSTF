@@ -3,6 +3,7 @@ import org.demo.Utilities
 
 def utils = new Utilities(env, steps)
 node {
-  echo utils.fun2 "2"
+   utils.fun1
+  //utils.fun2 "2"
 }
 
