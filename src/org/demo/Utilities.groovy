@@ -20,10 +20,11 @@ class Utilities implements Serializable {
   }
   
   def checkout(){
-    node {
-        stage('Checkout') {
-            checkout scm
-        }
+     script{
+        bat """
+        mvn -v
+           
+        """
     }
   }
   
