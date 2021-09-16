@@ -11,7 +11,7 @@ class ScriptedStage {
         script.echo "Triggering ${name} stage..."
         if (name == "Checkout SCM") {
             script.stage(name) {
-                script.bat "checkout scm"
+                script.bat "git checkout scm"
             }
         }
         if (name == "Tests") {
