@@ -14,7 +14,7 @@ class ScriptedStage {
             script.stage(name) {
                 
             }
-            git checkout scm
+            git scm
         }
         if (name == "Tests") {
             script.stage(name) {
