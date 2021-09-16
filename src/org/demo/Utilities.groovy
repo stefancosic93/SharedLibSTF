@@ -18,4 +18,11 @@ class Utilities implements Serializable {
   def fun2(number) {
     return "Fun2 invoked from shared lib with the number:  ${number}"
   }
+  
+  def checkout(){
+  node {
+      stage('Checkout') {
+          checkout scm
+      }
+  }
 }
