@@ -20,9 +20,11 @@ class Utilities implements Serializable {
   }
   
   def checkout(){
-  node {
-      stage('Checkout') {
-          checkout scm
-      }
+    node {
+        stage('Checkout') {
+            checkout scm
+        }
+    }
   }
+  
 }
