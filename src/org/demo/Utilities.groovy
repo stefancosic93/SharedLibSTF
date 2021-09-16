@@ -21,10 +21,7 @@ class Utilities implements Serializable {
   
   def checkout(){
      script{
-        bat """
-        mvn -v
-           
-        """
+        bat "mvn -v"
     }
   }
   
