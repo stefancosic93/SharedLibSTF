@@ -1,7 +1,7 @@
 //@Library('SharedLibSTF_Jenkins') _
 //welcomeJob "lambdatest"
 @Library('SharedLibSTF_Jenkins')
-import org.foo.Utilities
+import org.demo.Utilities
 
 def utils = new Utilities(env, steps)
 node {
