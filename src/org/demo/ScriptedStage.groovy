@@ -5,7 +5,7 @@ class ScriptedStage {
         this.script = script
     }
     
-    void scmCheckout(String name, boolean param1) {
+    void scmCheckout() {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
             script.bat "scm checkout"
