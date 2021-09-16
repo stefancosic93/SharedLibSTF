@@ -4,6 +4,13 @@ class ScriptedStage {
     ScriptedStage(Script script) {
         this.script = script
     }
+    
+    void scmCheckout(String name, boolean param1) {
+        script.stage(name) {
+            script.echo "Triggering ${name} stage..."
+            script.bat "scm checkout"
+        }
+    }
 
     // You can pass as many parameters as needed
     void execute(String name, boolean param1) {
@@ -16,4 +23,6 @@ class ScriptedStage {
             }
         }
     }
+    
+    
 }
