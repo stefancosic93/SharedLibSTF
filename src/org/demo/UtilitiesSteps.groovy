@@ -5,6 +5,6 @@ class UtilitiesSteps implements Serializable {
     this.steps = steps
   }
   def mvn(args) {
-    steps.sh "${steps.tool 'Maven'}/bin/mvn -o ${args}"
+    steps.bat "${steps.tool 'Maven'}/bin/mvn -o ${args}"
   }
 }
