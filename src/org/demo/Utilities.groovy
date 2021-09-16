@@ -10,4 +10,8 @@ class Utilities implements Serializable {
   def mvn(args) {
     steps.sh "${steps.tool 'Maven'}/bin/mvn -o ${args}"
   }
+  
+  def fun1() {
+    println('Fun1 Invoced from shared lib')
+  }
 }
