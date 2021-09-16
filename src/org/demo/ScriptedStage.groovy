@@ -1,6 +1,7 @@
 class ScriptedStage {
     private final Script script
-
+    private final Object scm
+    
     ScriptedStage(Script script) {
         this.script = script
     }
