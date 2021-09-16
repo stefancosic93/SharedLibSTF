@@ -1,7 +1,7 @@
 package org.demo
 class UtilitiesSteps implements Serializable {
   def steps
-  Utilities(steps) {
+  UtilitiesSteps(steps) {
     this.steps = steps
   }
   def mvn(args) {
