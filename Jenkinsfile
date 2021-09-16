@@ -3,6 +3,6 @@ welcomeJob "lambdatest"
 
 node {
   stage("MVN Check") {
-    bash "mvn -v"
+    bat "mvn -v"
   }
 }
