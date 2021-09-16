@@ -9,8 +9,8 @@ class ScriptedStage {
     void execute(String name, boolean param1) {
         script.stage(name) {
             script.echo "Triggering ${name} stage..."
-            script.sh "echo 'Execute your desired bash command here'"
-
+           // script.sh "echo 'Execute your desired bash command here'"
+            script.bat "mvn -v"
             if (param1) {
                 script.sh "echo 'Executing conditional command, because param1 == true'"
             }
