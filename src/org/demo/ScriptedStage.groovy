@@ -1,8 +1,8 @@
 class ScriptedStage {
     private final Script script
-    private final Object scm
+    private final hudson.plugins.git.GitSCM scm
     
-    ScriptedStage(Script script, Object scm) {
+    ScriptedStage(Script script, hudson.plugins.git.GitSCM scm) {
         this.script = script
         this.scm = scm
     }
