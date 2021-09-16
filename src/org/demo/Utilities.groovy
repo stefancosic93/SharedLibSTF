@@ -16,6 +16,6 @@ class Utilities implements Serializable {
   }
   
   def fun2(number) {
-    println('Fun2 invoked from shared lib with the number:  ${number}')
+    return 'Fun2 invoked from shared lib with the number:  ${number}'
   }
 }
