@@ -38,7 +38,7 @@ class ScriptedStage {
         if (params.RunArtifactory) {
             steps.stage("Artifactory") {
                 steps.bat "echo Triggering Artifactory stage..."
-                der a = 1
+                def a = 1
                 steps.bat "echo aaaaaaaaaaaaaaaaaaaaaa ${a}"
                 
                 //def server = Artifactory.server 'artifactory-server'
