@@ -30,15 +30,16 @@ class ScriptedStage {
         
         if (params.RunSonar) {
             steps.stage("Sonar") {
+                steps.bat "echo Triggering Sonar stage..."
                 steps.bat "${params.Sonar} ${params.SonarLogin}"
             }
         }
-      /*  if (name == "Artifactory") {
-          /*
+        if (params.RunArtifactory) {
             steps.stage(name) {
+                steps.bat "echo Triggering Sonar stage..."
                 steps.script {
                     def server = Artifactory.server 'artifactory-server'
-
+                    /*
                     def uploadSpec = """{
                       "files": [
                         {
@@ -51,10 +52,11 @@ class ScriptedStage {
                     def buildInfo = Artifactory.newBuildInfo()
                     server.upload spec: uploadSpec, buildInfo: buildInfo
                     server.publishBuildInfo buildInfo 
+                    */
                 }
             }
           
-        }  */
+        }  
         
     } // end execute
         
