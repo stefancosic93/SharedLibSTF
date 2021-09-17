@@ -15,11 +15,11 @@ class ScriptedStage {
     void execute(String name) {
         script.echo "Triggering ${name} stage..."
         if (name == "Checkout SCM") {
-            script.stage(name) {
-                 script checkout scm
+            steps.stage(name) {
+                 steps.checkout scm
             }
         }
-        if (name == "Tests") {
+  /*      if (name == "Tests") {
             script.stage(name) {
                 script.bat "mvn test"
             }
@@ -40,6 +40,7 @@ class ScriptedStage {
                 script.bat "mvn -v"
             }
         }
+        */
     }
     
     
