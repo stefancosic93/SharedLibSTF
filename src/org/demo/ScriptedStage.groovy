@@ -23,7 +23,8 @@ class ScriptedStage {
        
         if (params.Tests != "") {
             steps.stage("Tests") {
-                steps.bat params.Tests
+                steps.bat "echo Triggering Tests stage..."
+                steps.bat "${params.Tests}"
             }
         }
         /*
