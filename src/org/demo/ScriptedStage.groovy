@@ -31,21 +31,22 @@ class ScriptedStage {
         }
         if (name == "Artifactory") {
             steps.stage(name) {
-                steps.bat "echo implement artifactory"
-                steps.def server = Artifactory.server 'artifactory-server'
-    
-                steps.def uploadSpec = """{
-                  "files": [
-                    {
-                      "pattern": "target/*.jar",
-                      "target": "MavenRepo/stefan.cosic/"
-                    }
-                 ]
-                }"""
-                
-                steps.def buildInfo = Artifactory.newBuildInfo()
-                steps.server.upload spec: uploadSpec, buildInfo: buildInfo
-                steps.server.publishBuildInfo buildInfo 
+                script {
+                    def server = Artifactory.server 'artifactory-server'
+
+                    def uploadSpec = """{
+                      "files": [
+                        {
+                          "pattern": "target/*.jar",
+                          "target": "MavenRepo/stefan.cosic/"
+                        }
+                     ]
+                    }"""
+
+                    def buildInfo = Artifactory.newBuildInfo()
+                    server.upload spec: uploadSpec, buildInfo: buildInfo
+                    server.publishBuildInfo buildInfo 
+                }
             }
         }
         
