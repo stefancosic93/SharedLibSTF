@@ -13,12 +13,9 @@ class ScriptedStage {
     
     // You can pass as many parameters as needed
     void execute(Object params) {
-        steps.bat "echo ${params.Checkout}"
-        steps.bat "echo ${params.RunTests}"
+        steps.bat "echo ${params.Sonar}"
         steps.bat "echo ${params.Tests}"
-        steps.bat "echo ${params.par1}"
-        steps.bat "echo ${params.par2}"
-        steps.bat "echo ${params.par3}"
+  
         
         //script.echo "Triggering ${name} stage..."
         if (params.Checkout == "Checkout") {
