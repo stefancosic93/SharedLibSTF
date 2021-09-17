@@ -17,15 +17,17 @@ class ScriptedStage {
         steps.bat "echo ${params.Tests2}"
         steps.bat "echo ${params.par1}"
         steps.bat "echo ${params.par2}"
-        steps.bat "echo ${params.par3}"        
+        steps.bat "echo ${params.par3}"  
+        steps.bat "echo ${params.Checkout}"  
         
         //script.echo "Triggering ${name} stage..."
-
-        steps.stage("Checkout SCM") {
-             steps.bat "echo Triggering Checkout SCM stage..."
-             steps.checkout scm
+        if (params.Checkout) {
+            steps.stage("Checkout SCM") {
+                 steps.bat "echo Triggering Checkout SCM stage..."
+                 steps.checkout scm
+            }
         }
-       
+       /*
         if (params.Tests.contains("mvn tests")) {
             steps.stage("Tests") {
                 steps.bat "echo Triggering Tests stage..."
