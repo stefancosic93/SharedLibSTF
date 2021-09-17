@@ -31,7 +31,7 @@ class ScriptedStage {
         }
         if (name == "Artifactory") {
             steps.stage(name) {
-                script {
+                steps.script {
                     def server = Artifactory.server 'artifactory-server'
 
                     def uploadSpec = """{
