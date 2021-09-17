@@ -12,10 +12,10 @@ class ScriptedStage {
     }
     
     // You can pass as many parameters as needed
-    void execute(String name) {
-        script.echo "Triggering ${name} stage..."
-        if (name == "Checkout SCM") {
-            steps.stage(name) {
+    void execute(Object params) {
+        //script.echo "Triggering ${name} stage..."
+        if (params.Checkout) {
+            steps.stage("Checkout SCM") {
                  steps.checkout scm
             }
         }
