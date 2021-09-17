@@ -16,15 +16,17 @@ class ScriptedStage {
         //script.echo "Triggering ${name} stage..."
         if (params.Checkout) {
             steps.stage("Checkout SCM") {
+                 steps.bat "echo Triggering Checkout SCM stage..."
                  steps.checkout scm
             }
         }
-        /*
-        if (name == "Tests") {
-            steps.stage(name) {
-                steps.bat "mvn test"
+       
+        if (params.Tests != "") {
+            steps.stage("Tests") {
+                steps.bat params.Tests
             }
         }
+        /*
         if (name == "Sonar") {
             steps.stage(name) {
                 steps.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
