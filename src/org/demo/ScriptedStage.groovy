@@ -38,23 +38,23 @@ class ScriptedStage {
         if (params.RunArtifactory) {
             steps.stage("Artifactory") {
                 steps.bat "echo Triggering Artifactory stage..."
-                steps.script {
-                    def server = Artifactory.server 'artifactory-server'
-                    /*
-                    def uploadSpec = """{
-                      "files": [
-                        {
-                          "pattern": "target/*.jar",
-                          "target": "MavenRepo/stefan.cosic/"
-                        }
-                     ]
-                    }"""
 
-                    def buildInfo = Artifactory.newBuildInfo()
-                    server.upload spec: uploadSpec, buildInfo: buildInfo
-                    server.publishBuildInfo buildInfo 
-                    */
-                }
+                def server = Artifactory.server 'artifactory-server'
+                /*
+                def uploadSpec = """{
+                  "files": [
+                    {
+                      "pattern": "target/*.jar",
+                      "target": "MavenRepo/stefan.cosic/"
+                    }
+                 ]
+                }"""
+
+                def buildInfo = Artifactory.newBuildInfo()
+                server.upload spec: uploadSpec, buildInfo: buildInfo
+                server.publishBuildInfo buildInfo 
+                */
+                
             }
           
         }  
