@@ -30,6 +30,7 @@ class ScriptedStage {
             }
         }
         if (name == "Artifactory") {
+          /*
             steps.stage(name) {
                 steps.script {
                     def server = Artifactory.server 'artifactory-server'
@@ -48,6 +49,7 @@ class ScriptedStage {
                     server.publishBuildInfo buildInfo 
                 }
             }
+            */
         }
         
     } // end execute
