@@ -39,7 +39,7 @@ class ScriptedStage {
             steps.stage("Artifactory") {
                 steps.bat "echo Triggering Artifactory stage..."
 
-                def server = Artifactory.server 'artifactory-server'
+                steps.def server = Artifactory.server 'artifactory-server'
                 /*
                 def uploadSpec = """{
                   "files": [
