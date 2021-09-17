@@ -27,15 +27,15 @@ class ScriptedStage {
                  steps.checkout scm
             }
         }
-       /*
-        if (params.Tests.contains("mvn tests")) {
+       
+        if (params.RunTests) {
             steps.stage("Tests") {
                 steps.bat "echo Triggering Tests stage..."
                 steps.bat "${params.Tests}"
             }
         }
         
-        if (params.Sonar.contains("sonar")) {
+        if (params.RunSonar) {
             steps.stage("Sonar") {
                 steps.bat "${params.Sonar} ${params.SonarLogin}"
             }
