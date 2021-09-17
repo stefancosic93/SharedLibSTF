@@ -34,9 +34,10 @@ class ScriptedStage {
                 steps.bat "${params.Sonar} ${params.SonarLogin}"
             }
         }
+        
         if (params.RunArtifactory) {
-            steps.stage(name) {
-                steps.bat "echo Triggering Sonar stage..."
+            steps.stage("Artifactory") {
+                steps.bat "echo Triggering Artifactory stage..."
                 steps.script {
                     def server = Artifactory.server 'artifactory-server'
                     /*
