@@ -13,8 +13,8 @@ class ScriptedStage {
     
     // You can pass as many parameters as needed
     void execute(Object params) {
-        steps.bat "echo ${params.Sonar}"
-        steps.bat "echo ${params.Tests}"
+        steps.bat "echo ${params.Sonar1}"
+        steps.bat "echo ${params.Tests2}"
   
         
         //script.echo "Triggering ${name} stage..."
@@ -30,13 +30,13 @@ class ScriptedStage {
                 steps.bat "${params.Tests}"
             }
         }
-        /*
-        if (name == "Sonar") {
-            steps.stage(name) {
-                steps.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
+        
+        if (params.Sonar1 == "sonar") {
+            steps.stage("Sonar") {
+                steps.bat "${params.Sonar} ${params.SonarLogin}"
             }
         }
-        if (name == "Artifactory") {
+      /*  if (name == "Artifactory") {
           /*
             steps.stage(name) {
                 steps.script {
