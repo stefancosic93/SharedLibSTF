@@ -21,27 +21,34 @@ class ScriptedStage {
         }
         if (name == "Tests") {
             steps.stage(name) {
-                script.bat "mvn test"
+                steps.bat "mvn test"
             }
         }
         if (name == "Sonar") {
             steps.stage(name) {
-                script.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
+                steps.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
             }
         }
         if (name == "Artifactory") {
             steps.stage(name) {
-                script.bat "echo implement artifactory"
-            }
-        }
-        if (name == "Foo") {
-            steps.stage(name) {
-                script.echo "Triggering ${name} stage..."
-                script.bat "mvn -v"
+                steps.bat "echo implement artifactory"
+                def server = Artifactory.server 'artifactory-server'
+    
+                def uploadSpec = """{
+                  "files": [
+                    {
+                      "pattern": "target/*.jar",
+                      "target": "MavenRepo/stefan.cosic/"
+                    }
+                 ]
+                }"""
+                
+                def buildInfo = Artifactory.newBuildInfo()
+                server.upload spec: uploadSpec, buildInfo: buildInfo
+                server.publishBuildInfo buildInfo 
             }
         }
         
-    }
-    
-    
+    } // end execute
+        
 }
