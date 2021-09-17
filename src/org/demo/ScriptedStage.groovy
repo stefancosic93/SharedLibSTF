@@ -19,6 +19,7 @@ class ScriptedStage {
                  steps.checkout scm
             }
         }
+        /*
         if (name == "Tests") {
             steps.stage(name) {
                 steps.bat "mvn test"
