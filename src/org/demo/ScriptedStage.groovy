@@ -10,15 +10,11 @@ class ScriptedStage {
         this.env = env
         this.steps = steps
     }
-    
-    // You can pass as many parameters as needed
+
     void execute(Object params) {
         steps.bat "echo Checkout:${params.Checkout}"
         steps.bat "echo RunTests:${params.RunTests}"
         steps.bat "echo RunSonar:${params.RunSonar}"
-        steps.bat "echo RunArtifactory:${params.RunArtifactory}"
-
-        
         
         if (params.Checkout) {
             steps.stage("Checkout SCM") {
