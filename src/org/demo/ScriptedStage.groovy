@@ -12,7 +12,7 @@ class ScriptedStage {
     }
     
     // You can pass as many parameters as needed
-    void execute(Object params, Object server) {
+    void execute(Object params) {
         steps.bat "echo Checkout:${params.Checkout}"
         steps.bat "echo RunTests:${params.RunTests}"
         steps.bat "echo RunSonar:${params.RunSonar}"
