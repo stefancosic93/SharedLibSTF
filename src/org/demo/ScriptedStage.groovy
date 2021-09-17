@@ -32,9 +32,9 @@ class ScriptedStage {
         if (name == "Artifactory") {
             steps.stage(name) {
                 steps.bat "echo implement artifactory"
-                def server = Artifactory.server 'artifactory-server'
+                steps.def server = Artifactory.server 'artifactory-server'
     
-                def uploadSpec = """{
+                steps.def uploadSpec = """{
                   "files": [
                     {
                       "pattern": "target/*.jar",
@@ -43,9 +43,9 @@ class ScriptedStage {
                  ]
                 }"""
                 
-                def buildInfo = Artifactory.newBuildInfo()
-                server.upload spec: uploadSpec, buildInfo: buildInfo
-                server.publishBuildInfo buildInfo 
+                steps.def buildInfo = Artifactory.newBuildInfo()
+                steps.server.upload spec: uploadSpec, buildInfo: buildInfo
+                steps.server.publishBuildInfo buildInfo 
             }
         }
         
