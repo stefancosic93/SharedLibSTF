@@ -41,27 +41,6 @@ class ScriptedStage {
             }
         }
         
-        if (params.RunArtifactory) {
-            /*
-            steps.stage("Artifactory") {
-                steps.bat "echo Triggering Artifactory stage..."            
-                def uploadSpec = """{
-                  "files": [
-                    {
-                      "pattern": "target/*.jar",
-                      "target": "MavenRepo/stefan.cosic/"
-                    }
-                 ]
-                }"""
-
-                def buildInfo = Artifactory.newBuildInfo()
-                server.upload spec: uploadSpec, buildInfo: buildInfo
-                server.publishBuildInfo buildInfo 
-            }
-            
-          */
-        }  
-        
     } // end execute
         
 }
