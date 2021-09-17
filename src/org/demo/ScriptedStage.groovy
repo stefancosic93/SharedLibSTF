@@ -50,8 +50,8 @@ class ScriptedStage {
                     server.publishBuildInfo buildInfo 
                 }
             }
-            */
-        }
+          
+        }  */
         
     } // end execute
         
