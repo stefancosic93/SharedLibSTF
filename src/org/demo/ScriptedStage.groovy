@@ -18,14 +18,13 @@ class ScriptedStage {
   
         
         //script.echo "Triggering ${name} stage..."
-        if (params.Checkout == "Checkout") {
-            steps.stage("Checkout SCM") {
-                 steps.bat "echo Triggering Checkout SCM stage..."
-                 steps.checkout scm
-            }
+
+        steps.stage("Checkout SCM") {
+             steps.bat "echo Triggering Checkout SCM stage..."
+             steps.checkout scm
         }
        
-        if (params.RunTests == "RunTests") {
+        if (params.Tests == "mvn tests") {
             steps.stage("Tests") {
                 steps.bat "echo Triggering Tests stage..."
                 steps.bat "${params.Tests}"
