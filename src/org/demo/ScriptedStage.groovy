@@ -19,28 +19,28 @@ class ScriptedStage {
                  steps.checkout scm
             }
         }
-  /*      if (name == "Tests") {
-            script.stage(name) {
+        if (name == "Tests") {
+            steps.stage(name) {
                 script.bat "mvn test"
             }
         }
         if (name == "Sonar") {
-            script.stage(name) {
+            steps.stage(name) {
                 script.bat "mvn clean verify sonar:sonar -Dsonar.login=f260730b8650aba93bb9cdad3310b95dbb1eec4e"
             }
         }
         if (name == "Artifactory") {
-            script.stage(name) {
+            steps.stage(name) {
                 script.bat "echo implement artifactory"
             }
         }
         if (name == "Foo") {
-            script.stage(name) {
+            steps.stage(name) {
                 script.echo "Triggering ${name} stage..."
                 script.bat "mvn -v"
             }
         }
-        */
+        
     }
     
     
