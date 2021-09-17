@@ -14,14 +14,14 @@ class ScriptedStage {
     // You can pass as many parameters as needed
     void execute(Object params) {
         //script.echo "Triggering ${name} stage..."
-        if (params.Checkout) {
+        if (params.Checkout == "true") {
             steps.stage("Checkout SCM") {
                  steps.bat "echo Triggering Checkout SCM stage..."
                  steps.checkout scm
             }
         }
        
-        if (params.RunTests) {
+        if (params.RunTests == "true") {
             steps.stage("Tests") {
                 steps.bat "echo Triggering Tests stage..."
                 steps.bat "${params.Tests}"
