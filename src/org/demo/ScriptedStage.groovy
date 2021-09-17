@@ -15,7 +15,9 @@ class ScriptedStage {
     void execute(Object params) {
         steps.bat "echo ${params.Sonar1}"
         steps.bat "echo ${params.Tests2}"
-  
+        steps.bat "echo ${params.par1}"
+        steps.bat "echo ${params.par2}"
+        steps.bat "echo ${params.par3}"        
         
         //script.echo "Triggering ${name} stage..."
 
